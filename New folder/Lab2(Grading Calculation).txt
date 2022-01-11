@@ -1,0 +1,54 @@
+.DATA 
+    MARK DB 75  
+    GRADE DB DUP(0)
+    GPA DB DUP(0)
+.CODE
+org 100h
+   
+   MOV AL,MARK
+    
+   CMP AL,80
+   JGE A  
+   
+   CMP AL,70
+   JGE B
+   
+   CMP AL,60
+   JGE C
+   
+   CMP AL,50
+   JGE D
+   
+   JMP FAIL 
+    
+   A:
+    MOV GPA,5 
+    MOV GRADE,'A'
+    JMP EXIT
+    
+   B:
+    MOV GPA,4
+    MOV GRADE,'B'
+    JMP EXIT
+    
+   C:
+     MOV GPA,3
+     MOV GRADE,'C'
+     JMP EXIT
+     
+   D:
+    MOV GPA,2 
+    MOV GRADE,'D'
+    JMP EXIT
+   
+   FAIL:
+    MOV GPA,0
+    MOV GRADE,'F'
+    JMP EXIT  
+
+EXIT:
+    ret
+
+
+
+

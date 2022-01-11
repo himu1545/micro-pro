@@ -1,0 +1,17 @@
+org 100h
+
+.data
+a dw 05h
+b dw 08h
+c dw ?
+ 
+.code
+    
+	mov ax,a
+	mov bx,b
+
+	add ax,bx
+	mov c,ax
+
+ret
+end main
